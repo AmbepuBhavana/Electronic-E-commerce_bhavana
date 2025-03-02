@@ -1,0 +1,175 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #50c878;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+}
+
+.group-buy-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.group-buy-header {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.group-buy-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.filter-container {
+    display: flex;
+    gap: 15px;
+}
+
+.form-control {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-width: 200px;
+}
+
+.deals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.deal-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.deal-card:hover {
+    transform: scale(1.05);
+}
+
+.deal-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.deal-details {
+    padding: 15px;
+}
+
+.price-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.group-price {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+.discount-badge {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.progress-container {
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+    color: #666;
+}
+
+.deal-timer {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.join-group-buy {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.join-group-buy:hover {
+    background-color: #3a7bd5;
+}
+
+.no-deals-message {
+    text-align: center;
+    padding: 50px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+}
+
+.alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+
+    .deals-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,206 @@
+:root {
+    /* Unique Color Palette */
+    --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    --secondary-gradient: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+    --background-dark: #121212;
+    --card-background: #1e1e1e;
+    --text-light: #f4f4f4;
+    --accent-color: #10ac84;
+    --shadow-elevation: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Reset and Base Styles */
+.group-buy-container {
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--background-dark);
+}
+
+/* Unique Group Buy Card Design */
+.group-buy-card {
+    background: var(--card-background);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: var(--shadow-elevation);
+    position: relative;
+    color: var(--text-light);
+}
+
+.group-buy-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--primary-gradient);
+}
+
+.group-buy-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.group-buy-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.group-buy-status {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: var(--secondary-gradient);
+    color: var(--background-dark);
+}
+
+.group-buy-body {
+    display: flex;
+    padding: 1.5rem;
+}
+
+.group-buy-image {
+    flex: 0 0 250px;
+    margin-right: 1.5rem;
+}
+
+.group-buy-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    filter: grayscale(20%) contrast(110%);
+    transition: transform 0.3s ease;
+}
+
+.group-buy-card:hover .group-buy-image img {
+    transform: scale(1.05);
+}
+
+.group-buy-details {
+    flex-grow: 1;
+}
+
+.group-buy-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: rgba(244, 244, 244, 0.6);
+    font-size: 0.9rem;
+}
+
+.group-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.discount-badge {
+    background: var(--secondary-gradient);
+    color: var(--background-dark);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.group-buy-progress {
+    margin-top: 1rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--primary-gradient);
+    transition: width 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.participants-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    color: rgba(244, 244, 244, 0.7);
+    font-size: 0.9rem;
+}
+
+.group-buy-footer {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.join-button {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.join-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.time-remaining {
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .group-buy-body {
+        flex-direction: column;
+    }
+    
+    .group-buy-image {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Dark Mode Enhancements */
+@media (prefers-color-scheme: dark) {
+    .group-buy-container {
+        background-color: var(--background-dark);
+    }
+}
+
+/* Accessibility and Print Styles */
+@media print {
+    .group-buy-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
